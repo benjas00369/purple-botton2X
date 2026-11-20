@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#180d25">
+<title>PURPLE BOTTON</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#130b1d;color:white;
+ font-family:Arial,sans-serif;
+ padding-bottom:90px
+}
+header{
+ padding:23px 18px;
+ background:#21132f;
+ border-bottom:1px solid #70429a
+}
+header h1{margin:0;color:#d6a5ff;font-size:25px}
+header p{margin:6px 0 0;color:#bca4ce;font-size:11px}
+main{padding:17px;max-width:600px;margin:auto}
+.card{
+ background:#261735;border:1px solid #50336b;
+ border-radius:17px;padding:17px;margin-bottom:14px
+}
+.hero{
+ background:linear-gradient(130deg,#863bc0,#391853);
+ padding:23px;border-radius:15px;margin-bottom:18px
+}
+.hero h2{font-size:25px;margin:5px 0}
+.hero p{font-size:12px;color:#ead8fa}
+nav{
+ display:grid;grid-template-columns:repeat(4,1fr);
+ gap:7px;margin-bottom:22px
+}
+nav button{
+ background:#30203f;color:white;border:1px solid #674486;
+ border-radius:11px;padding:13px 3px;font-size:11px
+}
+nav button.active{background:#8b43c5}
+.page{display:none}
+.page.active{display:block}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.action{
+ background:#38234c;border:1px solid #765093;
+ color:white;border-radius:14px;padding:17px 10px;
+ text-align:left;min-height:105px
+}
+.action b{display:block;margin:8px 0}
+.small{font-size:11px;color:#bca9cc}
+.switch{accent-color:#b56af0;width:21px;height:21px}
+.option{
+ display:flex;justify-content:space-between;align-items:center;
+ padding:16px;background:#30203f;border-radius:12px;
+ margin:10px 0;border:1px solid #563a70
+}
+.red{
+ background:#c42d43;border:0;border-radius:13px;
+ padding:17px;color:white;font-weight:bold;width:100%;
+ font-size:17px
+}
+.purple{
+ background:#873cc0;border:0;border-radius:13px;
+ padding:15px;color:white;font-weight:bold;width:100%
+}
+#quote{font-size:23px;line-height:1.5;text-align:center;padding:28px 5px}
+.bubble{
+ position:fixed;bottom:18px;right:18px;width:60px;height:60px;
+ border-radius:50%;border:2px solid white;
+ background:linear-gradient(135deg,#d9a7ff,#7629bd);
+ color:white;font-size:20px;font-weight:bold;
+ box-shadow:0 0 22px #a64de9;z-index:20
+}
+#bubbleMenu{
+ display:none;position:fixed;bottom:90px;right:18px;
+ background:#291638;border:1px solid #a65be0;
+ border-radius:15px;padding:12px;z-index:19
+}
+#bubbleMenu button{
+ display:block;background:transparent;border:0;
+ color:white;padding:12px;width:145px;text-align:left
+}
+#message{
+ display:none;position:fixed;bottom:95px;left:50%;
+ transform:translateX(-50%);background:#8740b9;
+ padding:14px 18px;border-radius:13px;
+ z-index:30;width:max-content;max-width:90%;font-size:13px
+}
+footer{text-align:center;color:#927ba6;font-size:10px;padding:25px}
+</style>
+</head>
+<body>
+
+<header>
+ <h1>💜 PURPLE BOTTON</h1>
+ <p>ULTIMATE GAMING PANEL</p>
+</header>
+
+<main>
+ <div class="hero">
+  <div style="font-size:11px">WELCOME TO YOUR PANEL</div>
+  <h2>PLAY. BOOST. WIN.</h2>
+  <p>O teu painel gamer está pronto!</p>
+ </div>
+
+ <nav>
+  <button class="active" onclick="openPage('boost',this)">⚡<br>BOOST</button>
+  <button onclick="openPage('gaming',this)">🎯<br>GAMING</button>
+  <button onclick="openPage('vpn',this)">🌐<br>VPN</button>
+  <button onclick="openPage('motivation',this)">🔥<br>MOTIVA</button>
+ </nav>
+
+ <section id="boost" class="page active">
+  <h2>⚡ Phone Optimizer</h2>
+  <p class="small">Ferramentas demonstrativas</p>
+  <div class="card">
+   <b>📱 Phone Performance</b>
+   <p class="small">Indicador ilustrativo de desempenho</p>
+   <div style="height:8px;background:#493557;border-radius:10px">
+    <div style="width:68%;height:8px;background:#c084fc;border-radius:10px"></div>
+   </div>
+   <p class="small">68% · DEMO</p>
+  </div>
+  <div class="grid">
+   <button class="action" onclick="demo('🗑️ Lixo limpo com sucesso!')">🗑️<b>CLEAN JUNK</b><span class="small">Limpar lixo</span></button>
+   <button class="action" onclick="demo('🧹 Cache limpo com sucesso!')">🧹<b>CLEAR CACHE</b><span class="small">Limpar cache</span></button>
+   <button class="action" onclick="demo('🚀 Memória otimizada!')">🚀<b>BOOST RAM</b><span class="small">Otimizar RAM</span></button>
+   <button class="action" onclick="demo('⚡ Desempenho otimizado!')">⚡<b>CPU BOOST</b><span class="small">Desempenho</span></button>
+  </div>
+  <p class="small">ⓘ Efeitos visuais demonstrativos. Não alteram o telemóvel.</p>
+ </section>
+
+ <section id="gaming" class="page">
+  <h2>🎯 GAMING TOOLS</h2>
+  <p class="small">Ativa as tuas ferramentas favoritas.</p>
+  <div id="options"></div>
+  <p class="small">Estas opções são apenas visuais e não modificam o Free Fire.</p>
+ </section>
+
+ <section id="vpn" class="page">
+  <div class="card" style="text-align:center;padding:30px 20px">
+   <div style="font-size:55px">🌐</div>
+   <h2>VPN EU 2X</h2>
+   <p class="small">EUROPEAN CONNECTION</p>
+   <div class="card">
+    <p class="small">CONNECTION STATUS</p>
+    <h2 id="vpnStatus">DISCONNECTED</h2>
+   </div>
+   <button class="red" id="vpnButton" onclick="toggleVPN()">● CONNECT</button>
+   <p class="small">Demonstração visual. Não estabelece uma VPN real.</p>
+  </div>
+ </section>
+
+ <section id="motivation" class="page">
+  <div class="card" style="text-align:center">
+   <div style="font-size:55px">🏆</div>
+   <h2>FREE FIRE MOTIVATION</h2>
+   <div id="quote">Um verdadeiro jogador nunca desiste.</div>
+   <button class="purple" onclick="nextQuote()">✦ PRÓXIMA FRASE</button>
+  </div>
+ </section>
+</main>
+
+<footer>💜 PURPLE BOTTON · GAMING PANEL</footer>
+
+<div id="bubbleMenu">
+ <button onclick="openPage('boost')">⚡ BOOST</button>
+ <button onclick="openPage('gaming')">🎯 GAMING</button>
+ <button onclick="openPage('vpn')">🌐 VPN EU 2X</button>
+ <button onclick="openPage('motivation')">🔥 MOTIVATION</button>
+</div>
+<button class="bubble" onclick="toggleMenu()">PB</button>
+<div id="message"></div>
+
+<script>
+function openPage(id,button){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ if(button)button.classList.add('active');
+ document.getElementById('bubbleMenu').style.display='none';
+}
+function toggleMenu(){
+ let menu=document.getElementById('bubbleMenu');
+ menu.style.display=menu.style.display==='block'?'none':'block';
+}
+function demo(msg){
+ let box=document.getElementById('message');
+ box.textContent=msg;
+ box.style.display='block';
+ setTimeout(()=>box.style.display='none',2500);
+}
+const features=[
+ '2X Method','Jumpstrafe','Estabilizador de mira',
+ '2X Grudenta','Aim Peek','Trick Shots'
+];
+features.forEach(name=>{
+ let row=document.createElement('div');
+ row.className='option';
+ let label=document.createElement('b');
+ label.textContent=name;
+ let toggle=document.createElement('input');
+ toggle.type='checkbox';
+ toggle.className='switch';
+ toggle.setAttribute('aria-label','Ativar '+name);
+ toggle.onchange=()=>demo(name+(toggle.checked?' ativado!':' desativado!'));
+ row.append(label,toggle);
+ document.getElementById('options').append(row);
+});
+let connected=false;
+function toggleVPN(){
+ connected=!connected;
+ document.getElementById('vpnStatus').textContent=
+ connected?'CONNECTED (DEMO)':'DISCONNECTED';
+ document.getElementById('vpnButton').textContent=
+ connected?'● DISCONNECT':'● CONNECT';
+ document.getElementById('vpnButton').style.background=
+ connected?'#7835a5':'#c42d43';
+ demo(connected?'VPN demo ligada!':'VPN demo desligada!');
+}
+const quotes=[
+ 'Um verdadeiro jogador nunca desiste.',
+ 'A vitória começa na tua mentalidade.',
+ 'Cai 100 vezes, levanta-te 101.',
+ 'Não precisas de sorte quando tens habilidade.',
+ 'Treina em silêncio, deixa a vitória fazer barulho.',
+ 'O respeito conquista-se dentro do campo.',
+ 'Nunca desistas do Booyah!',
+ 'Os campeões não nascem, treinam!'
+];
+let quoteIndex=0;
+function nextQuote(){
+ quoteIndex=(quoteIndex+1)%quotes.length;
+ document.getElementById('quote').textContent=quotes[quoteIndex];
+}
+setInterval(nextQuote,6500);
+</script>
+</body>
+</html>
